@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="12dp"
+    tools:context=".RegisterFragment">
+
+    <EditText
+        android:id="@+id/register_name_et"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:hint="Username" />
+
+    <EditText
+        android:id="@+id/register_pass_et"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/register_name_et"
+        android:hint="Password"
+        android:layout_centerInParent="true"/>
+
+    <EditText
+        android:id="@+id/register_refcode_et"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/register_pass_et"
+        android:hint="Referral Code"
+        android:layout_centerInParent="true"/>
+
+    <Button
+        android:id="@+id/register_btn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/register_refcode_et"
+        android:text="Register user"/>
+
+</RelativeLayout>

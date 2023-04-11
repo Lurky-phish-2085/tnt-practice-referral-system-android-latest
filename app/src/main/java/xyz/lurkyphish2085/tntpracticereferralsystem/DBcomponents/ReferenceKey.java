@@ -12,9 +12,12 @@ public class ReferenceKey {
     private String code;
     private int UserKey;
 
-    public ReferenceKey(String code, int userKey) {
+    private int uplineId;
+
+    public ReferenceKey(String code, int userKey, int uplineId) {
         this.code = code;
         UserKey = userKey;
+        this.uplineId = uplineId;
     }
 
     public ReferenceKey() {
@@ -26,6 +29,14 @@ public class ReferenceKey {
 
     public void setId(int id) {
         this.id = id;
+    }
+
+    public int getUplineId() {
+        return this.uplineId;
+    }
+
+    public void setUplineId(int uplineId) {
+        this.uplineId = uplineId;
     }
 
     public String getCode() {

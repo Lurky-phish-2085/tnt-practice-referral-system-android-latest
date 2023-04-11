@@ -17,6 +17,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.ImageButton;
 
 import java.util.List;
 
@@ -28,7 +29,7 @@ public class DashboardFragment extends Fragment implements View.OnClickListener 
     List<Transaction> transactionList;
 
     NavController navController;
-    Button gotoInput, logoutBtn, gotoSettings;
+    ImageButton gotoInput, logoutBtn, gotoSettings;
     TransactionAdapter adapter;
     MainViewModel mainViewModel;
 
@@ -52,10 +53,10 @@ public class DashboardFragment extends Fragment implements View.OnClickListener 
         adapter = new TransactionAdapter();
         recyclerView.setAdapter(adapter);
 
+
         mainViewModel = new ViewModelProvider(requireActivity()).get(MainViewModel.class);
         mainViewModel.getCurrentState().observe(getViewLifecycleOwner(), states -> {
             if(!states.isEmpty()){
-
                 mainViewModel.getTransactionByUser(states.get(0).getCurrentUserID()).observe(getViewLifecycleOwner(), new Observer<List<Transaction>>() {
                     @Override
                     public void onChanged(List<Transaction> transactions) {

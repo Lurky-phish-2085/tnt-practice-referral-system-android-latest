@@ -73,7 +73,7 @@ public class RegisterFragment extends Fragment implements View.OnClickListener {
                         for(User i: names){
                             System.out.println("User Registered");
                             Random rand = new Random(i.getId());
-                            mvm.insert(new ReferenceKey(String.valueOf(rand.nextInt(1000)), i.getId()));
+                            mvm.insert(new ReferenceKey(String.valueOf(rand.nextInt(1000)), i.getId(), refs.get(0).getId()));
                         }
                     });
                 }

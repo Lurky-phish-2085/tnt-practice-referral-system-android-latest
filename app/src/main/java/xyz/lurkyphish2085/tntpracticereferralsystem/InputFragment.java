@@ -52,20 +52,29 @@ public class InputFragment extends Fragment implements View.OnClickListener {
 
     @Override
     public void onClick(View view) {
+        int currentId = ((UserSessionActivity) getActivity()).currentUserID;
+
         int id = view.getId();
         if (id == addAmountBtn.getId()) {
             // ToDo: Logic to add amount to user
             Date date = new Date();
             SimpleDateFormat format = new SimpleDateFormat("MM/dd/y h:m:s a");
-            mainViewModel.getCurrentState().observe(getViewLifecycleOwner(), states -> {
-                int currentUserID = states.get(0).getCurrentUserID();
-                double toAdd = Double.parseDouble(amount.getText().toString());
 
-                mainViewModel.insert(new Transaction("Bank transfer", toAdd, currentUserID, format.format(date)));
-                mainViewModel.getTransactionByUser(currentUserID).observe(getViewLifecycleOwner(), transactions -> {
-                    navController.navigate(R.id.action_inputFragment_to_dashboardFragment);
-                });
+            double toAdd = Double.parseDouble(amount.getText().toString());
+            mainViewModel.insert(new Transaction("Bank transfer", toAdd, currentId, format.format(date)));
+            mainViewModel.getTransactionByUser(currentId).observe(getViewLifecycleOwner(), transactions -> {
+                navController.navigate(R.id.action_inputFragment_to_dashboardFragment);
             });
+            //This code is not needed just compare - jet
+//            mainViewModel.getCurrentState().observe(getViewLifecycleOwner(), states -> {
+//                int currentUserID = states.get(0).getCurrentUserID();
+//                double toAdd = Double.parseDouble(amount.getText().toString());
+//
+//                mainViewModel.insert(new Transaction("Bank transfer", toAdd, currentUserID, format.format(date)));
+//                mainViewModel.getTransactionByUser(currentUserID).observe(getViewLifecycleOwner(), transactions -> {
+//                    navController.navigate(R.id.action_inputFragment_to_dashboardFragment);
+//                });
+//            });
         }
     }
 }

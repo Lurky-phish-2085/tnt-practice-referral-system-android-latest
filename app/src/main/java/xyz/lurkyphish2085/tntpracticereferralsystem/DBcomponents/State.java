@@ -11,6 +11,7 @@ public class State{
     private String password;
     private String name;
 
+
     public State(int currentUserID, String password, String name) {
         this.currentUserID = currentUserID;
         this.password = password;
@@ -27,6 +28,7 @@ public class State{
     public void setId(int id) {
         this.id = id;
     }
+
 
     public int getCurrentUserID() {
         return currentUserID;

@@ -9,15 +9,18 @@
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:supportsRtl="true"
-        android:theme="@style/Theme.TNTPracticeReferralSystem"
+        android:theme="@style/Theme.MyApplication.NoActionBar"
         tools:targetApi="31">
         <activity
+            android:theme="@style/Theme.MyApplication.NoActionBar"
             android:name=".UserSessionActivity"
             android:exported="false" />
         <activity
+            android:theme="@style/Theme.MyApplication.NoActionBar"
             android:name=".OnBoardingActivity"
             android:exported="false" />
         <activity
+            android:theme="@style/Theme.MyApplication.NoActionBar"
             android:name=".MainActivity"
             android:exported="true">
             <intent-filter>

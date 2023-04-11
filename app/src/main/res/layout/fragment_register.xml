@@ -1,39 +1,84 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="12dp"
     tools:context=".RegisterFragment">
 
-    <EditText
-        android:id="@+id/register_name_et"
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_centerInParent="true"
-        android:hint="Username" />
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        android:gravity="center"
+        >
 
-    <EditText
-        android:id="@+id/register_pass_et"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/register_name_et"
-        android:hint="Password"
-        android:layout_centerInParent="true"/>
+        <LinearLayout
+            android:background="#F1F1F1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="20dp"
+            android:orientation="vertical">
 
-    <EditText
-        android:id="@+id/register_refcode_et"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/register_pass_et"
-        android:hint="Referral Code"
-        android:layout_centerInParent="true"/>
+            <TextView
+                android:id="@+id/textView2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="30dp"
+                android:gravity="center"
+                android:layout_marginBottom="30dp"
+                android:textColor="@color/blue_700"
+                android:text="Register Screen" />
 
-    <Button
-        android:id="@+id/register_btn"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/register_refcode_et"
-        android:text="Register user"/>
+            <EditText
+                android:id="@+id/register_refcode_et"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:ems="10"
+                android:textAlignment="center"
+                android:hint="Referral Code"
+                android:inputType="textPersonName" />
 
-</RelativeLayout>
+
+            <EditText
+                android:id="@+id/register_name_et"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:ems="10"
+                android:textAlignment="center"
+                android:inputType="textPersonName"
+                android:hint="UserName" />
+
+            <EditText
+                android:id="@+id/register_pass_et"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:ems="10"
+                android:textAlignment="center"
+                android:hint="Password"
+                android:inputType="textPassword" />
+
+            <Button
+                android:id="@+id/register_btn"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:text="Register"
+                android:backgroundTint="@color/blue_700"/>
+
+            <Button
+                android:id="@+id/goto_login_btn"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:backgroundTint="#fff"
+                android:text="Already have an Account?"
+                android:textColor="@color/blue_700" />
+
+        </LinearLayout>
+
+
+    </RelativeLayout>
+
+
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

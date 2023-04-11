@@ -21,7 +21,7 @@ public abstract class MainDatabase extends RoomDatabase {
 
     public static synchronized MainDatabase getInstance(Context context){
         if(instance == null){
-            instance = Room.databaseBuilder(context.getApplicationContext(), MainDatabase.class, "Rewards01212127361268356")
+            instance = Room.databaseBuilder(context.getApplicationContext(), MainDatabase.class, "Rewards212127368356")
                     .fallbackToDestructiveMigration().addCallback(prepop).build();
         }
         return instance;
@@ -54,7 +54,7 @@ public abstract class MainDatabase extends RoomDatabase {
             usrDao.insert(new User("Admin", "Adminc"));
             usrDao.insert(new User("Adminc", "Admin"));
             transactionDao.insert(new Transaction("Initial funds", 9000, 1, "Jan/1/1970"));
-            referenceKeyDao.insert(new ReferenceKey("DokitoMVP", 1));
+            referenceKeyDao.insert(new ReferenceKey("DokitoMVP", 1, 0));
             return null;
         }
     }
